@@ -58,5 +58,5 @@ app.delete('/api/notes/:id', ({ params: { id } }, res) => {
 })
 app.get('*', (req, res) => res.status(404).json({ success: false, msg: 'Resource not found' }))
 
-const PORT = 3001
+const PORT = process.env.PORT || 3001
 app.listen(PORT, () => console.log(`Server run on port ${PORT}`))
